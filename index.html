@@ -1,59 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> 
-  <meta charset="UTF-8" /> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Herick Tiburski - Portfólio</title>
   <style>
+    /* Reset simples */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #eee;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40px 60px;
+      position: relative;
+    }
+
+    /* Logo no topo direito */
+    .logo-univali {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 120px;
+      height: auto;
+      filter: brightness(0) invert(1);
+      /* para a imagem ficar branca, já que o fundo é preto */
+    }
+
+    /* Conteúdo da esquerda */
+    .content {
+      max-width: 400px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+      gap: 12px;
     }
+
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.2em;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #00bcd4; /* azul claro */
     }
+
     p {
-      margin: 0.2em;
-      font-size: 1.2em;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      color: #ccc;
     }
+
+    .idade {
+      font-weight: 600;
+      color: #80deea;
+    }
+
     .social {
-      margin-top: 1em;
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
     }
+
     .social a {
-      margin: 0 10px;
+      color: #00bcd4;
       text-decoration: none;
-      color: #0072b1; /* cor do LinkedIn */
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s ease;
     }
-    .social a.instagram { color: #C13584; } /* cor do Instagram */
-    .social a.github { color: #333; } /* cor do GitHub */
+
+    .social a:hover {
+      color: #80deea;
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
-  <h1>Herick Tiburski</h1>
-  <p>Engenheiro de Computação - 2/10</p>
-  <p>Idade: <span id="idade">18</span> anos</p>
-  <div class="social">
-    <a class="instagram" href="https://instagram.com/herick.tiburski" target="_blank">@herick.tiburski</a>
-    <a href="https://linkedin.com/in/herickbetintiburski" target="_blank">/herickbetintiburski</a>
-    <a class="github" href="https://github.com/TheHerick" target="_blank">TheHerick</a>
+  <img class="logo-univali" src="https://infoworker.com.br/wp-content/uploads/2018/03/univali-2.png" alt="Logo Univali" />
+
+  <div class="content">
+    <h1>Herick Tiburski</h1>
+    <p>Engenheiro de Computação - 2/10</p>
+    <p>Idade: <span class="idade" id="idade">18</span> anos</p>
+
+    <div class="social">
+      <a href="https://instagram.com/herick.tiburski" target="_blank" rel="noopener noreferrer">@herick.tiburski</a>
+      <a href="https://linkedin.com/in/herickbetintiburski" target="_blank" rel="noopener noreferrer">/herickbetintiburski</a>
+      <a href="https://github.com/TheHerick" target="_blank" rel="noopener noreferrer">TheHerick</a>
+    </div>
   </div>
 
   <script>
     function calcularIdade() {
-      const nascimento = new Date(2006, 8, 26); // meses começam do 0, então 8 = setembro
+      const nascimento = new Date(2006, 8, 26); // setembro (8)
       const hoje = new Date();
       let idade = hoje.getFullYear() - nascimento.getFullYear();
-      const m = hoje.getMonth() - nascimento.getMonth();
-      if (m < 0 || (m === 0 && hoje.getDate() < nascimento.getDate())) {
+      const mes = hoje.getMonth() - nascimento.getMonth();
+      if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
         idade--;
       }
       document.getElementById('idade').textContent = idade;
