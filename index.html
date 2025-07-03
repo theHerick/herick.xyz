@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Herick Tiburski d - Portfólio</title>
+<title>Herick Tiburski - Portfólio</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -18,13 +18,25 @@
     padding: 40px 60px;
     gap: 40px;
   }
-  .logo-univali {
+
+  .univali-banner {
     position: absolute;
     top: 20px;
     right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .univali-text {
+    color: #00bcd4;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .logo-univali {
     width: 120px;
     filter: brightness(0) invert(1);
   }
+
   .content {
     max-width: 400px;
     display: flex;
@@ -80,10 +92,10 @@
     max-height: 300px;
     overflow-y: auto;
     padding-right: 6px;
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  #posts::-webkit-scrollbar {     /* Chrome, Safari, Opera */
+  #posts::-webkit-scrollbar {
     display: none;
   }
   #posts-title {
@@ -147,16 +159,25 @@
       padding-left: 0;
       margin-top: 30px;
     }
-    .logo-univali {
-      width: 80px;
+    .univali-banner {
       top: 10px;
       right: 10px;
+    }
+    .univali-text {
+      font-size: 0.9rem;
+    }
+    .logo-univali {
+      width: 80px;
     }
   }
 </style>
 </head>
 <body>
-<img class="logo-univali" src="https://infoworker.com.br/wp-content/uploads/2018/03/univali-2.png" alt="Logo Univali" />
+
+<div class="univali-banner">
+  <span class="univali-text">Student</span>
+  <img class="logo-univali" src="https://infoworker.com.br/wp-content/uploads/2018/03/univali-2.png" alt="Univali Logo">
+</div>
 
 <div class="content">
   <img src="https://media.licdn.com/dms/image/v2/D4D03AQHV_NoDBzMpCg/profile-displayphoto-shrink_400_400/B4DZbj_Lt_HsAk-/0/1747581714073?e=1756944000&v=beta&t=Gs6Qk-_GCHjlUPGU3FvGhKu0V2NGNrTtL6A-zZCorQI" alt="Foto de Herick" class="profile-pic" />
@@ -174,7 +195,7 @@
   <div id="posts-section">
     <div id="posts-title">Posts</div>
     <div id="posts">
-      <!-- Posts vão aparecer aqui -->
+      <!-- Posts aparecem aqui -->
     </div>
   </div>
 </div>
@@ -197,7 +218,7 @@
   }
   calcularIdade();
 
-  fetch('posts.json')
+  fetch('posts.json?v=' + new Date().getTime())
     .then(res => {
       if (!res.ok) throw new Error('Não foi possível carregar posts.json');
       return res.json();
@@ -223,4 +244,3 @@
 </script>
 </body>
 </html>
-
