@@ -1,194 +1,188 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Herick Tiburski - Portfólio</title>
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #eee;
-      min-height: 100vh;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 40px 60px;
-      position: relative;
-      gap: 40px;
-    }
-    .logo-univali {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 120px;
-      filter: brightness(0) invert(1);
-    }
-    .content {
-      max-width: 400px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: #00bcd4;
-    }
-    p {
-      font-size: 1.25rem;
-      line-height: 1.4;
-      color: #ccc;
-    }
-    .idade {
-      font-weight: 600;
-      color: #80deea;
-    }
-    .social {
-      margin-top: 20px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .social a {
-      color: #00bcd4;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-    }
-    .social a:hover {
-      color: #80deea;
-      text-decoration: underline;
-    }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00bcd4;
-      margin-bottom: 20px;
-    }
-    #posts {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-height: 300px;
-      overflow-y: auto;
-      padding-right: 8px;
-    }
-    #posts-title {
-      font-size: 1.8rem;
-      color: #00bcd4;
-      font-weight: 700;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #00bcd4;
-      padding-bottom: 4px;
-    }
-    .post {
-      background: #222;
-      padding: 12px 15px;
-      border-radius: 6px;
-      box-shadow: 0 0 10px #00bcd4aa;
-      color: #ccc;
-      font-size: 1rem;
-    }
-    .post h3 {
-      margin-bottom: 4px;
-      font-weight: 700;
-      color: #80deea;
-    }
-    .post small {
-      display: block;
-      margin-bottom: 6px;
-      color: #4db6ac;
-      font-weight: 600;
-    }
-    /* Espaço para futuros artigos à direita */
-    .articles {
-      flex-grow: 1;
-      max-width: 600px;
-      border-left: 1px solid #333;
-      padding-left: 30px;
-      color: #555;
-      font-style: italic;
-      user-select: none;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Herick Tiburski - Portfólio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px 60px;
+    position: relative;
+    gap: 40px;
+  }
+  .logo-univali {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    filter: brightness(0) invert(1);
+  }
+  .content {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #00bcd4;
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: #ccc;
+  }
+  .idade {
+    font-weight: 600;
+    color: #80deea;
+  }
+  .social {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .social a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+  }
+  .social a:hover {
+    color: #80deea;
+    text-decoration: underline;
+  }
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00bcd4;
+    margin-bottom: 20px;
+  }
+  #posts {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+  #posts-title {
+    font-size: 1.4rem;
+    color: #00bcd4;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .post {
+    background: #1e1e1e;
+    padding: 10px 12px;
+    border-radius: 4px;
+    color: #ccc;
+    font-size: 1rem;
+    border-left: 3px solid #00bcd4;
+  }
+  .post h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: #00bcd4;
+    font-weight: 600;
+  }
+  .post small {
+    display: block;
+    margin-bottom: 6px;
+    color: #888;
+    font-size: 0.85rem;
+  }
+  .articles {
+    flex-grow: 1;
+    max-width: 600px;
+    border-left: 1px solid #333;
+    padding-left: 30px;
+    color: #555;
+    font-style: italic;
+    user-select: none;
+  }
+</style>
 </head>
 <body>
-  <img class="logo-univali" src="https://infoworker.com.br/wp-content/uploads/2018/03/univali-2.png" alt="Logo Univali" />
+<img class="logo-univali" src="https://infoworker.com.br/wp-content/uploads/2018/03/univali-2.png" alt="Logo Univali" />
 
-  <div class="content">
-    <!-- Foto do perfil via URL -->
-    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHV_NoDBzMpCg/profile-displayphoto-shrink_400_400/B4DZbj_Lt_HsAk-/0/1747581714073?e=1756944000&v=beta&t=Gs6Qk-_GCHjlUPGU3FvGhKu0V2NGNrTtL6A-zZCorQI" alt="Foto de Herick" class="profile-pic" />
+<div class="content">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQHV_NoDBzMpCg/profile-displayphoto-shrink_400_400/B4DZbj_Lt_HsAk-/0/1747581714073?e=1756944000&v=beta&t=Gs6Qk-_GCHjlUPGU3FvGhKu0V2NGNrTtL6A-zZCorQI" alt="Foto de Herick" class="profile-pic" />
 
-    <h1>Herick Tiburski</h1>
-    <p>Engenheiro de Computação - 2/10</p>
-    <p>Idade: <span class="idade" id="idade">18</span> anos</p>
+  <h1>Herick Tiburski</h1>
+  <p>Engenheiro de Computação - 2/10</p>
+  <p>Idade: <span class="idade" id="idade">18</span> anos</p>
 
-    <div class="social">
-      <a href="https://instagram.com/herick.tiburski" target="_blank" rel="noopener noreferrer">@herick.tiburski</a>
-      <a href="https://linkedin.com/in/herickbetintiburski" target="_blank" rel="noopener noreferrer">/herickbetintiburski</a>
-      <a href="https://github.com/TheHerick" target="_blank" rel="noopener noreferrer">TheHerick</a>
-    </div>
-
-    <div id="posts-section">
-      <div id="posts-title">Posts</div>
-      <div id="posts">
-        <!-- Posts vão aparecer aqui -->
-      </div>
-    </div>
+  <div class="social">
+    <a href="https://instagram.com/herick.tiburski" target="_blank" rel="noopener noreferrer">@herick.tiburski</a>
+    <a href="https://linkedin.com/in/herickbetintiburski" target="_blank" rel="noopener noreferrer">/herickbetintiburski</a>
+    <a href="https://github.com/TheHerick" target="_blank" rel="noopener noreferrer">TheHerick</a>
   </div>
 
-  <div class="articles">
-    <h2>Artigos (em breve)</h2>
-    <p>Espaço reservado para artigos e outros conteúdos.</p>
+  <div id="posts-section">
+    <div id="posts-title">Posts</div>
+    <div id="posts">
+      <!-- Posts vão aparecer aqui -->
+    </div>
   </div>
+</div>
 
-  <script>
-    function calcularIdade() {
-      const nascimento = new Date(2006, 8, 26); // setembro (8)
-      const hoje = new Date();
-      let idade = hoje.getFullYear() - nascimento.getFullYear();
-      const mes = hoje.getMonth() - nascimento.getMonth();
-      if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
-        idade--;
-      }
-      document.getElementById('idade').textContent = idade;
+<div class="articles">
+  <h2>Artigos (em breve)</h2>
+  <p>Espaço reservado para artigos e outros conteúdos.</p>
+</div>
+
+<script>
+  function calcularIdade() {
+    const nascimento = new Date(2006, 8, 26);
+    const hoje = new Date();
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+    const mes = hoje.getMonth() - nascimento.getMonth();
+    if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+      idade--;
     }
-    calcularIdade();
+    document.getElementById('idade').textContent = idade;
+  }
+  calcularIdade();
 
-    fetch('posts.json')
-      .then(res => {
-        if (!res.ok) throw new Error('Não foi possível carregar posts.json');
-        return res.json();
-      })
-      .then(posts => {
-        const container = document.getElementById('posts');
-        posts.forEach(post => {
-          const postDiv = document.createElement('div');
-          postDiv.className = 'post';
-          postDiv.innerHTML = `
-            <h3>${post.titulo}</h3>
-            <small>${post.data}</small>
-            <p>${post.conteudo}</p>
-          `;
-          container.appendChild(postDiv);
-        });
-      })
-      .catch(err => {
-        console.error(err);
-        const container = document.getElementById('posts');
-        container.innerHTML = '<p style="color:#f44336;">Erro ao carregar posts.</p>';
+  fetch('posts.json')
+    .then(res => {
+      if (!res.ok) throw new Error('Não foi possível carregar posts.json');
+      return res.json();
+    })
+    .then(posts => {
+      const container = document.getElementById('posts');
+      posts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.className = 'post';
+        postDiv.innerHTML = `
+          <h3>${post.titulo}</h3>
+          <small>${post.data}</small>
+          <p>${post.conteudo}</p>
+        `;
+        container.appendChild(postDiv);
       });
-  </script>
+    })
+    .catch(err => {
+      console.error(err);
+      const container = document.getElementById('posts');
+      container.innerHTML = '<p style="color:#f44336;">Erro ao carregar posts.</p>';
+    });
+</script>
 </body>
 </html>
- 
