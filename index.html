@@ -12,10 +12,10 @@
     color: #eee;
     min-height: 100vh;
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 40px 60px;
-    position: relative;
     gap: 40px;
   }
   .logo-univali {
@@ -33,13 +33,13 @@
     flex-shrink: 0;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     color: #00bcd4;
   }
   p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     line-height: 1.4;
     color: #ccc;
   }
@@ -80,6 +80,11 @@
     max-height: 300px;
     overflow-y: auto;
     padding-right: 6px;
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE 10+ */
+  }
+  #posts::-webkit-scrollbar {     /* Chrome, Safari, Opera */
+    display: none;
   }
   #posts-title {
     font-size: 1.4rem;
@@ -116,6 +121,38 @@
     font-style: italic;
     user-select: none;
   }
+
+  /* RESPONSIVO */
+  @media (max-width: 800px) {
+    body {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .content {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+    .social {
+      justify-content: center;
+    }
+    .articles {
+      max-width: 100%;
+      border-left: none;
+      padding-left: 0;
+      margin-top: 30px;
+    }
+    .logo-univali {
+      width: 80px;
+      top: 10px;
+      right: 10px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -149,7 +186,7 @@
 
 <script>
   function calcularIdade() {
-    const nascimento = new Date(2006, 8, 26);
+    const nascimento = new Date(2006, 8, 26); // setembro (8)
     const hoje = new Date();
     let idade = hoje.getFullYear() - nascimento.getFullYear();
     const mes = hoje.getMonth() - nascimento.getMonth();
@@ -186,4 +223,3 @@
 </script>
 </body>
 </html>
- 
