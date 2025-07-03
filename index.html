@@ -1,72 +1,59 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Herick Tiburski - Portfólio</title>
   <style>
-    /* Reset simples */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #121212;
       color: #eee;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
       padding: 40px 60px;
       position: relative;
+      gap: 40px;
     }
-
-    /* Logo no topo direito */
     .logo-univali {
       position: absolute;
       top: 20px;
       right: 20px;
       width: 120px;
-      height: auto;
       filter: brightness(0) invert(1);
-      /* para a imagem ficar branca, já que o fundo é preto */
     }
-
-    /* Conteúdo da esquerda */
     .content {
       max-width: 400px;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-
     h1 {
       font-size: 3rem;
       font-weight: 700;
       letter-spacing: 1.5px;
-      color: #00bcd4; /* azul claro */
+      color: #00bcd4;
     }
-
     p {
       font-size: 1.25rem;
       line-height: 1.4;
       color: #ccc;
     }
-
     .idade {
       font-weight: 600;
       color: #80deea;
     }
-
     .social {
       margin-top: 20px;
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
-
     .social a {
       color: #00bcd4;
       text-decoration: none;
@@ -74,18 +61,36 @@
       font-size: 1rem;
       transition: color 0.2s ease;
     }
-
     .social a:hover {
       color: #80deea;
       text-decoration: underline;
     }
-
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00bcd4;
+      margin-bottom: 20px;
+    }
+    .linkedin-post {
+      max-width: 600px;
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00bcd4aa;
+      overflow: auto;
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
   <img class="logo-univali" src="https://infoworker.com.br/wp-content/uploads/2018/03/univali-2.png" alt="Logo Univali" />
 
   <div class="content">
+    <!-- Foto do perfil via URL -->
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHV_NoDBzMpCg/profile-displayphoto-shrink_400_400/B4DZbj_Lt_HsAk-/0/1747581714073?e=1756944000&v=beta&t=Gs6Qk-_GCHjlUPGU3FvGhKu0V2NGNrTtL6A-zZCorQI" alt="Foto de Herick" class="profile-pic" />
+
     <h1>Herick Tiburski</h1>
     <p>Engenheiro de Computação - 2/10</p>
     <p>Idade: <span class="idade" id="idade">18</span> anos</p>
@@ -95,6 +100,23 @@
       <a href="https://linkedin.com/in/herickbetintiburski" target="_blank" rel="noopener noreferrer">/herickbetintiburski</a>
       <a href="https://github.com/TheHerick" target="_blank" rel="noopener noreferrer">TheHerick</a>
     </div>
+  </div>
+
+  <div class="linkedin-post">
+    <h2>Publicação LinkedIn Exemplo</h2>
+    <!--
+      Para embedar um post real do LinkedIn:
+      1. Vá no post público do LinkedIn
+      2. Clique nos três pontinhos (...) no canto do post
+      3. Clique em "Incorporar post"
+      4. Copie o código iframe e cole aqui dentro (remova os comentários)
+
+      Exemplo genérico:
+    -->
+    <!--
+    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:xxxxxxxxxxxxxx" height="300" width="600" frameborder="0" allowfullscreen="" title="Publicação LinkedIn"></iframe>
+    -->
+    <p>Coloque aqui o embed do seu post LinkedIn público.</p>
   </div>
 
   <script>
