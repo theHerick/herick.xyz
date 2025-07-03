@@ -19,6 +19,7 @@
       padding: 40px 60px;
       position: relative;
       gap: 40px;
+      flex-wrap: wrap;
     }
     .logo-univali {
       position: absolute;
@@ -32,6 +33,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      flex-shrink: 0;
     }
     h1 {
       font-size: 3rem;
@@ -73,14 +75,29 @@
       border: 3px solid #00bcd4;
       margin-bottom: 20px;
     }
-    .linkedin-post {
+    #posts {
       max-width: 600px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .post {
       background: #222;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 15px #00bcd4aa;
-      overflow: auto;
       color: #ccc;
+    }
+    .post h3 {
+      margin-bottom: 8px;
+      color: #00bcd4;
+    }
+    .post small {
+      display: block;
+      margin-bottom: 12px;
+      color: #80deea;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -102,21 +119,8 @@
     </div>
   </div>
 
-  <div class="linkedin-post">
-    <h2>Publicação LinkedIn Exemplo</h2>
-    <!--
-      Para embedar um post real do LinkedIn:
-      1. Vá no post público do LinkedIn
-      2. Clique nos três pontinhos (...) no canto do post
-      3. Clique em "Incorporar post"
-      4. Copie o código iframe e cole aqui dentro (remova os comentários)
-
-      Exemplo genérico:
-    -->
-    <!--
-    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:xxxxxxxxxxxxxx" height="300" width="600" frameborder="0" allowfullscreen="" title="Publicação LinkedIn"></iframe>
-    -->
-    <p>Coloque aqui o embed do seu post LinkedIn público.</p>
+  <div id="posts">
+    <!-- Posts vão aparecer aqui -->
   </div>
 
   <script>
@@ -131,6 +135,31 @@
       document.getElementById('idade').textContent = idade;
     }
     calcularIdade();
+
+    // Função pra carregar os posts do JSON
+    fetch('posts.json')
+      .then(res => {
+        if (!res.ok) throw new Error('Não foi possível carregar posts.json');
+        return res.json();
+      })
+      .then(posts => {
+        const container = document.getElementById('posts');
+        posts.forEach(post => {
+          const postDiv = document.createElement('div');
+          postDiv.className = 'post';
+          postDiv.innerHTML = `
+            <h3>${post.titulo}</h3>
+            <small>${post.data}</small>
+            <p>${post.conteudo}</p>
+          `;
+          container.appendChild(postDiv);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        const container = document.getElementById('posts');
+        container.innerHTML = '<p style="color:#f44336;">Erro ao carregar posts.</p>';
+      });
   </script>
 </body>
 </html>
