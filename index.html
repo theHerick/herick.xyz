@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Herick Tiburski - Portfólio</title>
+<title>Herick Tiburski - Portfolio</title>
 <link rel="icon" type="image/png" href="https://www.freeiconspng.com/thumbs/letter-h-icon-png/letter-h-icon-png-24.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,6 +18,7 @@
     align-items: flex-start;
     padding: 40px 60px;
     gap: 40px;
+    position: relative;
   }
 
   .univali-banner {
@@ -49,16 +50,13 @@
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: #fff;
   }
   p {
     font-size: 1.2rem;
     line-height: 1.4;
-    color: #fff;
   }
   .idade {
     font-weight: 600;
-    color: #fff;
   }
   .social {
     margin-top: 20px;
@@ -74,7 +72,6 @@
     transition: color 0.2s ease;
   }
   .social a:hover {
-    color: #fff;
     text-decoration: underline;
   }
   .profile-pic {
@@ -94,13 +91,11 @@
     gap: 10px;
   }
   .articles h2 {
-    color: #fff;
-    margin-bottom: 10px;
     font-size: 1.6rem;
+    margin-bottom: 10px;
   }
   .article {
     background: #111;
-    color: #fff;
     padding: 10px 12px;
     border-radius: 4px;
     font-size: 1rem;
@@ -109,21 +104,32 @@
     font-size: 1.1rem;
     margin-bottom: 4px;
     font-weight: 600;
-    color: #fff;
   }
-  .article small {
+  .article small, .articles small {
     display: block;
     margin-bottom: 6px;
     color: #aaa;
     font-size: 0.85rem;
   }
-   .articles small2 {
-    color: #aaa;
-    margin-bottom: 6px;
-    font-size: 0.85rem;
+
+  .lang-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+  }
+  .lang-toggle:hover {
+    background: #555;
   }
 
-  /* RESPONSIVO */
+  /* RESPONSIVE */
   @media (max-width: 800px) {
     body {
       flex-direction: column;
@@ -163,16 +169,16 @@
 <body>
 
 <div class="univali-banner">
-  <span class="univali-text">Student at</span>
+  <span class="univali-text" id="univali-text">Student at</span>
   <img class="logo-univali" src="https://infoworker.com.br/wp-content/uploads/2018/03/univali-2.png" alt="Univali Logo">
 </div>
 
 <div class="content">
-  <img src="https://media.licdn.com/dms/image/v2/D4D03AQHV_NoDBzMpCg/profile-displayphoto-shrink_400_400/B4DZbj_Lt_HsAk-/0/1747581714073?e=1756944000&v=beta&t=Gs6Qk-_GCHjlUPGU3FvGhKu0V2NGNrTtL6A-zZCorQI" alt="Foto de Herick" class="profile-pic" />
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQHV_NoDBzMpCg/profile-displayphoto-shrink_400_400/B4DZbj_Lt_HsAk-/0/1747581714073?e=1756944000&v=beta&t=Gs6Qk-_GCHjlUPGU3FvGhKu0V2NGNrTtL6A-zZCorQI" alt="Herick's photo" class="profile-pic" />
 
-  <h1>Herick Tiburski</h1>
-  <p>Engenharia de Computação - 2/10</p>
-  <p>Idade: <span class="idade" id="idade">18</span> anos</p>
+  <h1 id="name">Herick Tiburski</h1>
+  <p id="course">Computer Engineering - 2/10</p>
+  <p id="age-label">Age: <span class="idade" id="idade">18</span> years old</p>
 
   <div class="social">
     <a href="https://instagram.com/herick.tiburski" target="_blank" rel="noopener noreferrer">@herick.tiburski</a>
@@ -182,13 +188,15 @@
 </div>
 
 <div class="articles">
-  <h2>Artigos</h2>
- <small2>Em Breve...</small2>
+  <h2 id="articles-title">Articles</h2>
+  <small id="coming-soon">Coming soon...</small>
 </div>
+
+<button class="lang-toggle" onclick="toggleLanguage()">PT-BR</button>
 
 <script>
   function calcularIdade() {
-    const nascimento = new Date(2006, 8, 26); // setembro (8)
+    const nascimento = new Date(2006, 8, 26); // September (8)
     const hoje = new Date();
     let idade = hoje.getFullYear() - nascimento.getFullYear();
     const mes = hoje.getMonth() - nascimento.getMonth();
@@ -198,6 +206,28 @@
     document.getElementById('idade').textContent = idade;
   }
   calcularIdade();
+
+  let currentLang = 'en';
+
+  function toggleLanguage() {
+    if (currentLang === 'en') {
+      document.getElementById('univali-text').textContent = 'Estudante na';
+      document.getElementById('course').textContent = 'Engenharia de Computação - 2/10';
+      document.getElementById('age-label').innerHTML = 'Idade: <span class="idade" id="idade">' + document.getElementById('idade').textContent + '</span> anos';
+      document.getElementById('articles-title').textContent = 'Artigos';
+      document.getElementById('coming-soon').textContent = 'Em breve...';
+      document.querySelector('.lang-toggle').textContent = 'EN-US';
+      currentLang = 'pt';
+    } else {
+      document.getElementById('univali-text').textContent = 'Student at';
+      document.getElementById('course').textContent = 'Computer Engineering - 2/10';
+      document.getElementById('age-label').innerHTML = 'Age: <span class="idade" id="idade">' + document.getElementById('idade').textContent + '</span> years old';
+      document.getElementById('articles-title').textContent = 'Articles';
+      document.getElementById('coming-soon').textContent = 'Coming soon...';
+      document.querySelector('.lang-toggle').textContent = 'PT-BR';
+      currentLang = 'en';
+    }
+  }
 </script>
 </body>
 </html>
