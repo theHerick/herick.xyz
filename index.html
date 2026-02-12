@@ -210,6 +210,10 @@
   <a href="http://lattes.cnpq.br/3508952194547220" target="_blank" rel="noopener noreferrer">Lattes</a>
 </div>
 
+  <div class="signature">
+    <img src="img/signature.png" alt="Assinatura" style="max-width: 200px; height: auto;" />
+  </div>
+
 </div>
 
 <div class="articles">
@@ -217,25 +221,25 @@
 
   <!-- ARTIGO 1 -->
   <div class="article">
-    <h3>
+    <h3 id="article1-title">
       Dispositivo vestível assistivo baseado em ultrassom para auxílio à locomoção de pessoas com deficiência visual
     </h3>
     
-    <small>
+    <small id="article1-published">
       DOI: <a href="https://doi.org/10.14210/asic2421592" target="_blank">10.14210/asic2421592</a><br>
       Published: 05/12/2025
     </small>
 
-    <p>
+    <p id="article1-desc">
       Development of a wearable assistive device in glasses format using ESP32-C3 and ultrasonic sensors (HC-SR04) to detect obstacles and simulate auditory spatial perception through sound frequency variation and directional emitters. The system includes Wi-Fi configuration interface and achieved 90% accuracy in laboratory tests.
     </p>
 
-    <small>
+    <small id="article1-authors">
       Authors: Herick Betin Tiburski, Michael Douglas Cabral Alves, Maurício de Campos<br>
       Anais do Seminário de Iniciação Científica – UNIVALI
     </small>
 
-    <a href="https://periodicos.univali.br/index.php/asic/article/view/21592" target="_blank">
+    <a id="article1-link" href="https://periodicos.univali.br/index.php/asic/article/view/21592" target="_blank">
       View publication →
     </a>
   </div>
@@ -243,25 +247,25 @@
 
   <!-- ARTIGO 2 -->
   <div class="article">
-    <h3>
+    <h3 id="article2-title">
       Simulador de carregamento para carros elétricos com painéis fotovoltaicos em diferentes cenários
     </h3>
     
-    <small>
+    <small id="article2-published">
       DOI: <a href="https://doi.org/10.14210/asic2421587" target="_blank">10.14210/asic2421587</a><br>
       Published: 05/12/2025
     </small>
 
-    <p>
+    <p id="article2-desc">
       Development of “SolarSim”, a modular simulator for electric vehicle charging integrated with photovoltaic systems. Built in Python using Tkinter, Matplotlib and ReportLab, with real meteorological API integration and dynamic energy generation analysis.
     </p>
 
-    <small>
+    <small id="article2-authors">
       Authors: Herick Betin Tiburski, Jordan Passinato Sausen<br>
       Anais do Seminário de Iniciação Científica – UNIVALI
     </small>
 
-    <a href="https://periodicos.univali.br/index.php/asic/article/view/21587" target="_blank">
+    <a id="article2-link" href="https://periodicos.univali.br/index.php/asic/article/view/21587" target="_blank">
       View publication →
     </a>
   </div>
@@ -292,7 +296,16 @@
       document.getElementById('iotec').textContent = 'Pesquisador do IoTec Lab';
       document.getElementById('age-label').innerHTML = 'Idade: <span class="idade" id="idade">' + document.getElementById('idade').textContent + '</span> anos';
       document.getElementById('articles-title').textContent = 'Artigos';
-      document.getElementById('coming-soon').textContent = 'Em breve...';
+      document.getElementById('article1-title').textContent = 'Dispositivo vestível assistivo baseado em ultrassom para auxílio à locomoção de pessoas com deficiência visual';
+      document.getElementById('article1-published').innerHTML = 'DOI: <a href="https://doi.org/10.14210/asic2421592" target="_blank">10.14210/asic2421592</a><br>Publicado: 05/12/2025';
+      document.getElementById('article1-desc').textContent = 'Desenvolvimento de um dispositivo assistivo vestível em formato de óculos utilizando ESP32-C3 e sensores ultrassônicos (HC-SR04) para detectar obstáculos e simular percepção espacial auditiva através de variação de frequência sonora e emissores direcionais. O sistema inclui interface de configuração Wi-Fi e alcançou 90% de precisão em testes laboratoriais.';
+      document.getElementById('article1-authors').innerHTML = 'Autores: Herick Betin Tiburski, Michael Douglas Cabral Alves, Maurício de Campos<br>Anais do Seminário de Iniciação Científica – UNIVALI';
+      document.getElementById('article1-link').textContent = 'Ver publicação →';
+      document.getElementById('article2-title').textContent = 'Simulador de carregamento para carros elétricos com painéis fotovoltaicos em diferentes cenários';
+      document.getElementById('article2-published').innerHTML = 'DOI: <a href="https://doi.org/10.14210/asic2421587" target="_blank">10.14210/asic2421587</a><br>Publicado: 05/12/2025';
+      document.getElementById('article2-desc').textContent = 'Desenvolvimento do "SolarSim", um simulador modular para carregamento de veículos elétricos integrado com sistemas fotovoltaicos. Construído em Python utilizando Tkinter, Matplotlib e ReportLab, com integração de API meteorológica real e análise dinâmica de geração de energia.';
+      document.getElementById('article2-authors').innerHTML = 'Autores: Herick Betin Tiburski, Jordan Passinato Sausen<br>Anais do Seminário de Iniciação Científica – UNIVALI';
+      document.getElementById('article2-link').textContent = 'Ver publicação →';
       document.querySelector('.lang-toggle').textContent = 'EN-US';
       currentLang = 'pt';
     } else {
@@ -301,7 +314,16 @@
       document.getElementById('iotec').textContent = 'Researcher at IoTec Lab';
       document.getElementById('age-label').innerHTML = 'Age: <span class="idade" id="idade">' + document.getElementById('idade').textContent + '</span> years old';
       document.getElementById('articles-title').textContent = 'Articles';
-      document.getElementById('coming-soon').textContent = 'Coming soon...';
+      document.getElementById('article1-title').textContent = 'Wearable assistive device based on ultrasound for aiding the locomotion of visually impaired people';
+      document.getElementById('article1-published').innerHTML = 'DOI: <a href="https://doi.org/10.14210/asic2421592" target="_blank">10.14210/asic2421592</a><br>Published: 05/12/2025';
+      document.getElementById('article1-desc').textContent = 'Development of a wearable assistive device in glasses format using ESP32-C3 and ultrasonic sensors (HC-SR04) to detect obstacles and simulate auditory spatial perception through sound frequency variation and directional emitters. The system includes Wi-Fi configuration interface and achieved 90% accuracy in laboratory tests.';
+      document.getElementById('article1-authors').innerHTML = 'Authors: Herick Betin Tiburski, Michael Douglas Cabral Alves, Maurício de Campos<br>Anais do Seminário de Iniciação Científica – UNIVALI';
+      document.getElementById('article1-link').textContent = 'View publication →';
+      document.getElementById('article2-title').textContent = 'Electric vehicle charging simulator with photovoltaic panels in different scenarios';
+      document.getElementById('article2-published').innerHTML = 'DOI: <a href="https://doi.org/10.14210/asic2421587" target="_blank">10.14210/asic2421587</a><br>Published: 05/12/2025';
+      document.getElementById('article2-desc').textContent = 'Development of "SolarSim", a modular simulator for electric vehicle charging integrated with photovoltaic systems. Built in Python using Tkinter, Matplotlib and ReportLab, with real meteorological API integration and dynamic energy generation analysis.';
+      document.getElementById('article2-authors').innerHTML = 'Authors: Herick Betin Tiburski, Jordan Passinato Sausen<br>Anais do Seminário de Iniciação Científica – UNIVALI';
+      document.getElementById('article2-link').textContent = 'View publication →';
       document.querySelector('.lang-toggle').textContent = 'PT-BR';
       currentLang = 'en';
     }
