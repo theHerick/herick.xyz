@@ -164,6 +164,29 @@
       width: 80px;
     }
   }
+ .article {
+  background: #111;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  border-left: 3px solid #4da6ff;
+}
+
+.article h3 {
+  margin-bottom: 6px;
+}
+
+.article a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #4da6ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.article a:hover {
+  text-decoration: underline;
+}
 </style>
 </head>
 <body>
@@ -191,7 +214,58 @@
 
 <div class="articles">
   <h2 id="articles-title">Articles</h2>
-  <small id="coming-soon">Coming soon...</small>
+
+  <!-- ARTIGO 1 -->
+  <div class="article">
+    <h3>
+      Dispositivo vestível assistivo baseado em ultrassom para auxílio à locomoção de pessoas com deficiência visual
+    </h3>
+    
+    <small>
+      DOI: <a href="https://doi.org/10.14210/asic2421592" target="_blank">10.14210/asic2421592</a><br>
+      Published: 05/12/2025
+    </small>
+
+    <p>
+      Development of a wearable assistive device in glasses format using ESP32-C3 and ultrasonic sensors (HC-SR04) to detect obstacles and simulate auditory spatial perception through sound frequency variation and directional emitters. The system includes Wi-Fi configuration interface and achieved 90% accuracy in laboratory tests.
+    </p>
+
+    <small>
+      Authors: Herick Betin Tiburski, Michael Douglas Cabral Alves, Maurício de Campos<br>
+      Anais do Seminário de Iniciação Científica – UNIVALI
+    </small>
+
+    <a href="https://periodicos.univali.br/index.php/asic/article/view/21592" target="_blank">
+      View publication →
+    </a>
+  </div>
+
+
+  <!-- ARTIGO 2 -->
+  <div class="article">
+    <h3>
+      Simulador de carregamento para carros elétricos com painéis fotovoltaicos em diferentes cenários
+    </h3>
+    
+    <small>
+      DOI: <a href="https://doi.org/10.14210/asic2421587" target="_blank">10.14210/asic2421587</a><br>
+      Published: 05/12/2025
+    </small>
+
+    <p>
+      Development of “SolarSim”, a modular simulator for electric vehicle charging integrated with photovoltaic systems. Built in Python using Tkinter, Matplotlib and ReportLab, with real meteorological API integration and dynamic energy generation analysis.
+    </p>
+
+    <small>
+      Authors: Herick Betin Tiburski, Jordan Passinato Sausen<br>
+      Anais do Seminário de Iniciação Científica – UNIVALI
+    </small>
+
+    <a href="https://periodicos.univali.br/index.php/asic/article/view/21587" target="_blank">
+      View publication →
+    </a>
+  </div>
+
 </div>
 
 <button class="lang-toggle" onclick="toggleLanguage()">PT-BR</button>
